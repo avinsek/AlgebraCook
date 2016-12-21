@@ -14,7 +14,14 @@
 				<div class="panel-body">
 					<ul class="list-group">
 						@foreach($recipes as $recipe)
-						<li class="list-group-item"><a href="recipes/view/{{$recipe->id}}">{{$recipe->name}}</a></li>
+						<li class="list-group-item"><a href="recipes/view/{{$recipe->id}}">{{$recipe->name}}</a>
+						
+						<form action="/recipes/{{$recipe->id}}" method="POST">
+						{{csrf_field()}}
+						{{method_field('DELETE')}}
+						<button>Izbriši recept</button>
+						</form>				
+						</li>
 						@endforeach
 					</ul>
 				</div>

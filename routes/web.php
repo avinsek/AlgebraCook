@@ -52,7 +52,8 @@ Route::group(['middleware' => 'web'], function () {
 	/*Route::get('/profil', function () 
 	{ 
 		return view('auth.profil'); });*/
-		
+	
+	Route::delete('/recipes/{id}', 'RecipesController@deleteRec');
 	Route::get('/profil', 'UserController@profil');
 	Route::get('/recipes/add', 'RecipesController@add');
 	Route::post('/recipes/add', 'RecipesController@save');

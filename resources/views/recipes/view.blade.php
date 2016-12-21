@@ -22,7 +22,9 @@
 					<ul class="list-group">
 				@foreach($recipe->ingredients as $ingredient)
 				
-				<li class="list-group-item">{{$ingredient->name}}</li>
+				<li class="list-group-item">{{$ingredient->name}}
+				<a href="http://localhost:8000/recipes/edit/{{$recipe->id}}">
+				<i class="fa fa-btn fa-pencil"></i>Izbriši</a></li>
 				@endforeach
 				</ul>
 				<h4>Opis: </h4>
